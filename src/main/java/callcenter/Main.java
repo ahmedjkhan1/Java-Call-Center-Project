@@ -45,8 +45,8 @@ public class Main {
 		dispatcher.findCallHandler(caller1); // received by Agent 1
 		dispatcher.findCallHandler(new Call()); //received by Agent 2
 		dispatcher.findCallHandler(new Call()); // received by Agent 3
-		dispatcher.findCallHandler(new Call()); // received by Supervisor 1
-		dispatcher.findCallHandler(caller2); // received by Supervisor 2
+		dispatcher.findCallHandler(new Call()); // received by Supervisor
+		dispatcher.findCallHandler(caller2); // received by Manager
 		dispatcher.findCallHandler(caller3); // on hold
 		dispatcher.findCallHandler(caller4); // on hold
 		dispatcher.findCallHandler(caller5); // on hold 

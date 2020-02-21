@@ -62,11 +62,11 @@ public class findCallHandlerTest {
 		dispatcher.findCallHandler(new Call()); //received by Agent 2
 		dispatcher.findCallHandler(new Call()); // received by Agent 3
 		dispatcher.findCallHandler(new Call()); // received by Supervisor 1
-		dispatcher.findCallHandler(caller2); // received by Supervisor 2
-		dispatcher.findCallHandler(caller3); // received by Supervisor 3
-		dispatcher.findCallHandler(caller4); // received by Manager 1
-		dispatcher.findCallHandler(caller5); // received by Agent 2
-		dispatcher.findCallHandler(caller6); // on hold - Will get message to wait for next available agent
+		dispatcher.findCallHandler(caller2); // received by Manager
+		dispatcher.findCallHandler(caller3); // On hold
+		dispatcher.findCallHandler(caller4); // On Hold
+		dispatcher.findCallHandler(caller5); // On Hold
+		dispatcher.findCallHandler(caller6); // on hold 
 		
 		ArrayList<Employee> employeeList = dispatcher.getEmployeeList();
 		Employee emp1 = employeeList.get(4);
