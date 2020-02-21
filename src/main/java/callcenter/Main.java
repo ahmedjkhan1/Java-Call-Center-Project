@@ -32,11 +32,8 @@ public class Main {
 		dispatcher.addEmployee(new Agent("Agent Terrance Davis", dispatcher));
 		
 		dispatcher.addEmployee(new Supervisor("Supervisor Kyle Lowry", dispatcher));
-		dispatcher.addEmployee(new Supervisor("Supervisor Marc Gasol", dispatcher));
-		dispatcher.addEmployee(new Supervisor("Supervisor Serge Ibaka", dispatcher));
 		
 		dispatcher.addEmployee(new Manager("Manager Nick Nurse", dispatcher));
-		dispatcher.addEmployee(new Manager("Manager Patrick Mutumbo", dispatcher));
 		
 		Caller caller1 = new Caller("Lebron James");
 		Caller caller2 = new Caller("Anthony Davis");
@@ -50,10 +47,10 @@ public class Main {
 		dispatcher.findCallHandler(new Call()); // received by Agent 3
 		dispatcher.findCallHandler(new Call()); // received by Supervisor 1
 		dispatcher.findCallHandler(caller2); // received by Supervisor 2
-		dispatcher.findCallHandler(caller3); // received by Supervisor 3
-		dispatcher.findCallHandler(caller4); // received by Manager 1
-		dispatcher.findCallHandler(caller5); // received by Agent 2
-		dispatcher.findCallHandler(caller6); // on hold - Will get message to wait for next available agent
+		dispatcher.findCallHandler(caller3); // on hold
+		dispatcher.findCallHandler(caller4); // on hold
+		dispatcher.findCallHandler(caller5); // on hold 
+		dispatcher.findCallHandler(caller6); // on hold 
 	}
 }
 

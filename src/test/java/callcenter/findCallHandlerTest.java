@@ -9,7 +9,7 @@ import org.junit.Test;
 public class findCallHandlerTest {
 
 	// Checks if Caller is put on hold after all employees are occupied
-	// Creates 8 employees
+	// Creates 5 employees - 3 agents - 1 supervisor - 1 manager
 	// create 9 callers
 	// if caller9 is on hold test case pass if not fails
 	@Test
@@ -69,12 +69,12 @@ public class findCallHandlerTest {
 		dispatcher.findCallHandler(caller6); // on hold - Will get message to wait for next available agent
 		
 		ArrayList<Employee> employeeList = dispatcher.getEmployeeList();
-		Employee emp1 = employeeList.get(5);
+		Employee emp1 = employeeList.get(4);
 		Call onCallWith = emp1.getOnCall();
 		Caller whichCaller = onCallWith.getCaller();
 		String nameOfCaller = whichCaller.getName();
 
-		if (nameOfCaller != "Rajon Rando") {
+		if (nameOfCaller != "Anthony Davis") {
 			fail("Caller was not dispatched to the correct employee");
 		}
 	}
@@ -87,11 +87,10 @@ public class findCallHandlerTest {
 		dispatcher.addEmployee(new Agent("Agent Terrance Davis", dispatcher));
 		
 		dispatcher.addEmployee(new Supervisor("Supervisor Kyle Lowry", dispatcher));
-		dispatcher.addEmployee(new Supervisor("Supervisor Marc Gasol", dispatcher));
-		dispatcher.addEmployee(new Supervisor("Supervisor Serge Ibaka", dispatcher));
+
 		
 		dispatcher.addEmployee(new Manager("Manager Nick Nurse", dispatcher));
-		dispatcher.addEmployee(new Manager("Manager Patrick Mutumbo", dispatcher));
+
 		
 		return dispatcher;
 	}
