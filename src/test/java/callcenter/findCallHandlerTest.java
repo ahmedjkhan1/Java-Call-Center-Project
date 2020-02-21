@@ -28,13 +28,12 @@ public class findCallHandlerTest {
 		dispatcher.findCallHandler(caller1); // received by Agent 1
 		dispatcher.findCallHandler(new Call()); //received by Agent 2
 		dispatcher.findCallHandler(new Call()); // received by Agent 3
-		dispatcher.findCallHandler(new Call()); // received by Supervisor 1
-		dispatcher.findCallHandler(caller2); // received by Supervisor 2
-		dispatcher.findCallHandler(caller3); // received by Supervisor 3
-		dispatcher.findCallHandler(caller4); // received by Manager 1
-		dispatcher.findCallHandler(caller5); // received by Agent 2
-		dispatcher.findCallHandler(caller6); // on hold - Will get message to wait for next available agent
-		
+		dispatcher.findCallHandler(new Call()); // received by Supervisor
+		dispatcher.findCallHandler(caller2); // received by Manager
+		dispatcher.findCallHandler(caller3); // On Hold
+		dispatcher.findCallHandler(caller4); // On Hold
+		dispatcher.findCallHandler(caller5); // On Hold
+		dispatcher.findCallHandler(caller6); // on hold
 		
 		ArrayList<Call> waitQueueList = dispatcher.getWaitQueue();
 		if (waitQueueList.isEmpty()) {
@@ -42,9 +41,9 @@ public class findCallHandlerTest {
 		}
 	}
 	
-	// Checks if correct employee is assined the correct caller
+	// Checks if correct employee is assigned the correct caller
 	// create 9 callers
-	// if caller3 "Rajon Rondo" is assigned the right employee
+	// if caller2 "Anthony Davis" is assigned the right employee
 	@Test
 	public void testDispatchToEmployees() {
 		System.out.println("Welcome to Ahmed's Call Center");
@@ -78,20 +77,15 @@ public class findCallHandlerTest {
 			fail("Caller was not dispatched to the correct employee");
 		}
 	}
-	
-	
+
 	// Functions creates a set of employee and returns the list
 	public CallDispatcher createEmployee(CallDispatcher dispatcher) {
 		dispatcher.addEmployee(new Agent("Agent Norman Powell", dispatcher));
 		dispatcher.addEmployee(new Agent("Agent Pascal Siakam", dispatcher));
 		dispatcher.addEmployee(new Agent("Agent Terrance Davis", dispatcher));
-		
 		dispatcher.addEmployee(new Supervisor("Supervisor Kyle Lowry", dispatcher));
-
-		
 		dispatcher.addEmployee(new Manager("Manager Nick Nurse", dispatcher));
 
-		
 		return dispatcher;
 	}
 
